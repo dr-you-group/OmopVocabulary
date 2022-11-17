@@ -12,6 +12,7 @@ library(dplyr)
 library(openxlsx)
 library(readr)
 library(tidyverse)
+library(stringr)
 
 dataFolder <- file.path(Sys.getenv("gitFolder"), "dr-you-group/OmopVocabulary/data/drug")
 
@@ -27,7 +28,6 @@ DRUG <- read.csv(
 CompleteData <- DRUG  
 IncompleteData <- DRUG
 
-CompleteData %>% str_detect(CompleteData$target_vocabulary_id, "RX")
 ## Complete ##
 CompleteData$target_vocabulary_id = ifelse(str_detect(CompleteData$target_vocabulary_id, "Rx")|str_detect(CompleteData$target_vocabulary_id, "SNOMED"),
        CompleteData$target_vocabulary_id,

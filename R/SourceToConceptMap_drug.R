@@ -93,4 +93,8 @@ JOIN <- JOIN %>% relocate(target_concept_class_id, .before = target_code_descrip
 names(JOIN)
 JOIN <- JOIN[,-c(18)]
 
-write.table(JOIN,file = "C:/Users/yijoo0320/git/dr-you-group/OmopVocabulary/data/drug/SourceToConceptMap_drug2022.11.16.csv", fileEncoding = "euc-kr", na = "" , sep = "\t")
+JOIN$source_concept_synonym <- str_replace_all(JOIN$source_concept_synonym, "," , ".")
+JOIN$source_code_description <- str_replace_all(JOIN$source_code_description, "," , ".")
+JOIN$target_code_description <- str_replace_all(JOIN$target_code_description, "," , ".")
+
+write.csv(JOIN,file = "C:/Users/yijoo0320/git/dr-you-group/OmopVocabulary/data/drug/SourceToConceptMap_drug2022.11.17.csv", fileEncoding = "euc-kr", na = "")
