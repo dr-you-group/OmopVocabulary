@@ -55,7 +55,7 @@ IncompleteData$target_vocabulary_id = ifelse(
 
 IncompleteData <- na.omit(IncompleteData)
 
-write.csv(JOIN,file = "C:/Users/yijoo0320/git/dr-you-group/OmopVocabulary/data/drug/CompleteMapping_drug2022.11.17.csv", fileEncoding = "euc-kr", na = "")
-write.csv(JOIN,file = "C:/Users/yijoo0320/git/dr-you-group/OmopVocabulary/data/drug/IncompleteMapping_drug2022.11.17.csv", fileEncoding = "euc-kr", na = "")
+write.csv(CompleteData,file = "C:/Users/yijoo0320/git/dr-you-group/OmopVocabulary/data/drug/CompleteMapping_drug2022.11.17.csv", fileEncoding = "euc-kr", na = "")
+write.csv(IncompleteData,file = "C:/Users/yijoo0320/git/dr-you-group/OmopVocabulary/data/drug/IncompleteMapping_drug2022.11.17.csv", fileEncoding = "euc-kr", na = "")
 
 
